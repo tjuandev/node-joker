@@ -1,0 +1,28 @@
+{
+	"name": "flashcards-app",
+	"version": "1.0.0",
+	"description": "Backend application where you can handle flashcards studies.",
+	"main": "src/app.ts",
+	"author": "tjuandev",
+	"license": "MIT",
+	"dependencies": {
+		"dotenv": "^16.5.0",
+		"express": "^5.1.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/express": "^5.0.1",
+		"@types/node": "^22.15.3",
+		"lefthook": "^1.11.12",
+		"nodemon": "^3.1.10",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.8.3"
+	},
+	"scripts": {
+		"build": "tsc",
+		"start": "node dist/server.js",
+		"dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/server.ts",
+		"format": "biome check --write .",
+		"lint": "biome lint --write . "
+	}
+}
