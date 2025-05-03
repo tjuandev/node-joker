@@ -22,7 +22,9 @@
 		"build": "tsc",
 		"start": "node dist/server.js",
 		"dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/server.ts",
-		"format": "biome check --write .",
-		"lint": "biome lint --write . "
+		"lint": "biome check ./src",
+		"format": "biome check --write ./src",
+		"biome:ci": "biome ci ./src --no-errors-on-unmatched --files-ignore-unknown=true",
+		"typecheck": "tsc --noEmit"
 	}
 }

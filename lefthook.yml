@@ -1,7 +1,11 @@
+colors: true
+
 pre-commit:
-  parallel: true
+  parallel: false
   commands:
-    check:
-      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
-      run: npx @biomejs/biome check --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
-      stage_fixed: true
+    format:
+      run: yarn format {staged_files} && git update-index --again
+    lint:
+      run: yarn lint {staged_files}
+    typecheck:
+      run: yarn typecheck
