@@ -15,4 +15,4 @@ pre-commit:
     typecheck:
       run: yarn typecheck
     test:
-      run: yarn test {staged_files}
+      run: yarn test {staged_files} --passWithNoTests

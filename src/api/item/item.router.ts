@@ -5,7 +5,7 @@ import {
 	getItemById,
 	getItems,
 	updateItem
-} from './controller.ts'
+} from './item.controller.ts'
 
 const router = Router()
 
