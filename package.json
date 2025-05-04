@@ -33,6 +33,7 @@
 		"biome:ci": "biome ci ./src --no-errors-on-unmatched --files-ignore-unknown=true",
 		"typecheck": "tsc --noEmit",
 		"test": "vitest run",
+		"test:w": "vitest --watch",
 		"test:ui": "vitest --ui"
 	},
 	"imports": {
