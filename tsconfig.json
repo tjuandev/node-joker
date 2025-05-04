@@ -10,7 +10,14 @@
 		"noEmit": true,
 		"outDir": "./dist",
 		"rootDir": "./src",
-		"declaration": true
+		"declaration": true,
+		"types": ["vitest/globals"],
+		"baseUrl": ".",
+		"paths": {
+			"#src/*": ["./src/*"],
+			"#testHelpers/*": ["./src/testHelpers/*"],
+			"#config/*": ["./src/config/*"]
+		}
 	},
 	"include": ["src/**/*"],
 	"exclude": ["node_modules", "dist"]

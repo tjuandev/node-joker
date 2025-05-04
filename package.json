@@ -15,18 +15,30 @@
 		"@commitlint/config-conventional": "^19.8.0",
 		"@types/express": "^5.0.1",
 		"@types/node": "^22.15.3",
+		"@types/supertest": "^6.0.3",
+		"@vitest/ui": "^3.1.2",
 		"lefthook": "^1.11.12",
 		"nodemon": "^3.1.10",
-		"ts-node": "^10.9.2",
-		"typescript": "^5.8.3"
+		"supertest": "^7.1.0",
+		"tsx": "^4.19.4",
+		"typescript": "^5.8.3",
+		"vitest": "^3.1.2"
 	},
 	"scripts": {
 		"build": "tsc",
 		"start": "node dist/server.js",
-		"dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/server.ts",
+		"dev": "nodemon --watch 'src/**/*.ts' --exec 'tsx' src/server.ts",
 		"lint": "biome check ./src",
 		"format": "biome check --write ./src",
 		"biome:ci": "biome ci ./src --no-errors-on-unmatched --files-ignore-unknown=true",
-		"typecheck": "tsc --noEmit"
-	}
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run",
+		"test:ui": "vitest --ui"
+	},
+	"imports": {
+		"#src/*": "./src/*",
+		"#testHelpers/*": "./src/testHelpers/*",
+		"#config/*": "./src/config/*"
+	},
+	"type": "module"
 }

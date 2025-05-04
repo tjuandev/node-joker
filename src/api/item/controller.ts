@@ -1,5 +1,5 @@
 import type { NextFunction, Request, Response } from 'express'
-import { type Item, items } from './model'
+import { type Item, items } from './model.ts'
 
 // Create an item
 export const createItem = (req: Request, res: Response, next: NextFunction) => {
@@ -23,7 +23,11 @@ export const getItems = (_req: Request, res: Response, next: NextFunction) => {
 }
 
 // Read single item
-export const getItemById = (req: Request, res: Response, next: NextFunction) => {
+export const getItemById = (
+	req: Request,
+	res: Response,
+	next: NextFunction
+) => {
 	try {
 		const id = Number.parseInt(req.params.id, 10)
 		const item = items.find(i => i.id === id)

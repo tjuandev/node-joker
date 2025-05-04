@@ -6,7 +6,7 @@
 		"indentStyle": "tab",
 		"indentWidth": 2,
 		"lineEnding": "lf",
-		"lineWidth": 120,
+		"lineWidth": 80,
 		"attributePosition": "auto"
 	},
 	"organizeImports": {
@@ -177,7 +177,10 @@
 	},
 	"overrides": [
 		{
-			"include": ["src/**/__tests__/*.{ts,tsx}", "src/**/__tests__/*.test.{ts,tsx}"],
+			"include": [
+				"src/**/__tests__/*.{ts,tsx}",
+				"src/**/__tests__/*.test.{ts,tsx}"
+			],
 			"linter": {
 				"enabled": true,
 				"rules": {

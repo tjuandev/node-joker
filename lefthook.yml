@@ -14,3 +14,5 @@ pre-commit:
       run: yarn lint {staged_files}
     typecheck:
       run: yarn typecheck
+    test:
+      run: yarn test {staged_files}
