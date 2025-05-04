@@ -1,5 +1,10 @@
 colors: true
 
+prepare-commit-msg:
+  commands:
+    commitlint:
+      run: yarn commitlint --edit $1
+
 pre-commit:
   parallel: false
   commands:

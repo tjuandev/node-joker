@@ -11,6 +11,8 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
+		"@commitlint/cli": "^19.8.0",
+		"@commitlint/config-conventional": "^19.8.0",
 		"@types/express": "^5.0.1",
 		"@types/node": "^22.15.3",
 		"lefthook": "^1.11.12",
