@@ -1,7 +1,7 @@
 {
-	"name": "flashcards-app",
+	"name": "node-joker-boilerplate",
 	"version": "1.0.0",
-	"description": "Backend application where you can handle flashcards studies.",
+	"description": "Node JS Boilerplate for building APIs with TypeScript, Vitest, Supertest and BiomeJS following best practices for code organization and testing.",
 	"main": "src/app.ts",
 	"author": "tjuandev",
 	"license": "MIT",
