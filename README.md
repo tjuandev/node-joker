@@ -3,7 +3,7 @@
 <div align="center">
 <img src="https://i.pinimg.com/736x/b9/0c/ac/b90cacaeaa59c2a6d82a4bf6d57b7ff7.jpg" alt="Joker" width="150" align="center" />
 
-<h3>Your starting point for your best Node.js API!</h3>
+<h3>The starting point for your best Node.js API!</h3>
 
 A modern Node.js boilerplate for building APIs with TypeScript, Vitest, Supertest and BiomeJS following best practices for code organization and testing.
 </div>
