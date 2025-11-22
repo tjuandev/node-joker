@@ -6,23 +6,23 @@
 	"author": "tjuandev",
 	"license": "MIT",
 	"dependencies": {
-		"dotenv": "^16.5.0",
+		"dotenv": "^16.6.1",
 		"express": "^5.1.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@commitlint/cli": "^19.8.0",
-		"@commitlint/config-conventional": "^19.8.0",
-		"@types/express": "^5.0.1",
-		"@types/node": "^22.15.3",
+		"@commitlint/cli": "^19.8.1",
+		"@commitlint/config-conventional": "^19.8.1",
+		"@types/express": "^5.0.5",
+		"@types/node": "^22.19.1",
 		"@types/supertest": "^6.0.3",
-		"@vitest/ui": "^3.1.2",
-		"lefthook": "^1.11.12",
-		"nodemon": "^3.1.10",
-		"supertest": "^7.1.0",
-		"tsx": "^4.19.4",
-		"typescript": "^5.8.3",
-		"vitest": "^3.1.2"
+		"@vitest/ui": "^3.2.4",
+		"lefthook": "^1.13.6",
+		"nodemon": "^3.1.11",
+		"supertest": "^7.1.4",
+		"tsx": "^4.20.6",
+		"typescript": "^5.9.3",
+		"vitest": "^3.2.4"
 	},
 	"scripts": {
 		"build": "tsc",
@@ -41,5 +41,6 @@
 		"#testHelpers/*": "./src/testHelpers/*",
 		"#config/*": "./src/config/*"
 	},
-	"type": "module"
+	"type": "module",
+	"packageManager": "pnpm@10.23.0+sha512.21c4e5698002ade97e4efe8b8b4a89a8de3c85a37919f957e7a0f30f38fbc5bbdd05980ffe29179b2fb6e6e691242e098d945d1601772cad0fef5fb6411e2a4b"
 }
