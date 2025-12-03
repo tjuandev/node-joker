@@ -1,6 +1,7 @@
 import type { RequestHandler } from 'express'
 import { getAllItems } from './item.repository.ts'
 import type { CreateItemBody, Item } from './item.types.ts'
+import { createItemValidator } from './item.validators.ts'
 
 export const createItem: RequestHandler<
 	Record<string, never>,
@@ -8,10 +9,12 @@ export const createItem: RequestHandler<
 	CreateItemBody
 > = async (req, res, next) => {
 	try {
-		const { name } = req.body
+		const { name } = createItemValidator.parse(req.body)
 		const newItem: Item = { id: Date.now(), name }
+
 		const items = await getAllItems()
 		items.push(newItem)
+
 		res.status(201).json(items)
 	} catch (error) {
 		next(error)

@@ -22,6 +22,10 @@ A modern Node.js boilerplate for building APIs with TypeScript, Vitest, Supertes
   - Vitest for unit testing
   - Vitest UI for visual test feedback
   - Test files colocated with source files
+- ✅ **Validation**: 
+  - Zod for runtime type validation and schema validation
+  - Validators colocated with features
+  - Automatic error handling for validation failures
 
 ## Project Structure
 
@@ -32,6 +36,7 @@ src/
 │       ├── item.controller.ts  # Business logic
 │       ├── item.model.ts       # Data models
 │       ├── item.router.ts      # Route definitions
+│       ├── item.validators.ts  # Zod validation schemas
 │       └── __tests__/
 │           └── item.test.ts  # Tests for item feature
 ├── config/                # Configuration files
@@ -71,6 +76,60 @@ src/
    # Type checking
    yarn typecheck
    ```
+
+## Validation with Zod
+
+This project uses [Zod](https://zod.dev/) for runtime type validation and schema validation. Validators are colocated with their respective features, following the project's colocation pattern.
+
+### Creating Validators
+
+Validators are defined in `*.validators.ts` files within each feature directory:
+
+```typescript
+import { z } from 'zod'
+
+export const createItemValidator = z.object({
+  name: z.string().min(1, { message: 'Name is required' })
+})
+```
+
+### Using Validators in Controllers
+
+Validators are used in controllers to parse and validate request bodies:
+
+```typescript
+import { createItemValidator } from './item.validators.ts'
+
+export const createItem: RequestHandler = async (req, res, next) => {
+  try {
+    const { name } = createItemValidator.parse(req.body)
+    // Use validated data...
+  } catch (error) {
+    next(error) // Zod errors are automatically handled
+  }
+}
+```
+
+### Error Handling
+
+Zod validation errors are automatically handled by the error handler middleware. When validation fails, the API returns a `400 Bad Request` response with detailed error information:
+
+```json
+{
+  "message": "Validation failed",
+  "errors": [
+    {
+      "code": "too_small",
+      "minimum": 1,
+      "type": "string",
+      "inclusive": true,
+      "exact": false,
+      "message": "Name is required",
+      "path": ["name"]
+    }
+  ]
+}
+```
 
 ## Path Aliases
 

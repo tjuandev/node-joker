@@ -7,7 +7,8 @@
 	"license": "MIT",
 	"dependencies": {
 		"dotenv": "^16.6.1",
-		"express": "^5.1.0"
+		"express": "^5.1.0",
+		"zod": "^4.1.13"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
