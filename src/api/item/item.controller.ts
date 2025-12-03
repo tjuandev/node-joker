@@ -1,20 +1,30 @@
-import type { NextFunction, Request, Response } from 'express'
-import { type Item, items } from './item.model.ts'
+import type { RequestHandler } from 'express'
+import { getAllItems } from './item.repository.ts'
+import type { CreateItemBody, Item } from './item.types.ts'
 
-export const createItem = (req: Request, res: Response, next: NextFunction) => {
+export const createItem: RequestHandler<
+	Record<string, never>,
+	unknown,
+	CreateItemBody
+> = async (req, res, next) => {
 	try {
 		const { name } = req.body
 		const newItem: Item = { id: Date.now(), name }
+		const items = await getAllItems()
 		items.push(newItem)
-		res.status(201).json(newItem)
+		res.status(201).json(items)
 	} catch (error) {
 		next(error)
 	}
 }
 
-export const getItems = (_req: Request, res: Response, next: NextFunction) => {
+export const getItems: RequestHandler<
+	Record<string, never>,
+	unknown,
+	unknown
+> = async (_req, res, next) => {
 	try {
-		res.json(items)
+		res.json(await getAllItems())
 	} catch (error) {
 		next(error)
 	}

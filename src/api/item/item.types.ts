@@ -3,4 +3,6 @@ export interface Item {
 	name: string
 }
 
-export const items: Item[] = []
+export interface CreateItemBody {
+	name: string
+}
