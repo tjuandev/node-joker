@@ -1,5 +1,5 @@
 import request from '#testHelpers/request.ts'
-import { getAllItems } from '../item.repository.ts'
+import { getAllItems } from '../repository.ts'
 
 describe('Route: /item', () => {
 	it('should return a list of items', async () => {
