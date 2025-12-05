@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { createItem, getItems } from './item.controller.ts'
+import { createItem, getItems } from './controller.ts'
 
 const router = Router()
 

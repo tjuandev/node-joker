@@ -1,4 +1,4 @@
-import type { Item } from './item.types.ts'
+import type { Item } from './types.ts'
 
 export const getAllItems = async (): Promise<Item[]> => {
 	return [

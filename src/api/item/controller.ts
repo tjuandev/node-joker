@@ -1,7 +1,7 @@
 import type { RequestHandler } from 'express'
-import { getAllItems } from './item.repository.ts'
-import type { CreateItemBody, Item } from './item.types.ts'
-import { createItemValidator } from './item.validators.ts'
+import { getAllItems } from './repository.ts'
+import type { CreateItemBody, Item } from './types.ts'
+import { createItemValidator } from './validators.ts'
 
 export const createItem: RequestHandler<
 	Record<string, never>,
